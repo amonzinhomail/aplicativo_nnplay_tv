@@ -1,0 +1,31 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?defina ADMIN_PASSWORD no arquivo .env}
+      SYNC_HOURS: ${SYNC_HOURS:-6}
+    volumes:
+      - nn_data:/data          # banners, uploads, data.js e senha: sobrevivem a atualizações
+    expose:
+      - "5173"                 # só o Caddy enxerga o app; ele não é publicado na internet
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?defina DOMAIN no arquivo .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data       # certificados HTTPS
+      - caddy_config:/config
+
+volumes:
+  nn_data:
+  caddy_data:
+  caddy_config:

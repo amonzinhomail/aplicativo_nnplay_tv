@@ -1,0 +1,42 @@
+[
+  {
+    "id": "4568e17c-9fab-4f05-94d6-1c1383f1063f",
+    "title": "NN Play - Dê o play no melhor",
+    "subtitle": "",
+    "image": "/uploads/424185a9f4bebdcdb5cce27e.webp",
+    "link": "",
+    "active": true
+  },
+  {
+    "id": "60477857-c1fe-405e-94c8-7625963031e3",
+    "title": "Futebol do NN Play",
+    "subtitle": "",
+    "image": "/uploads/7649a412ea397995c8a01a6c.webp",
+    "link": "",
+    "active": true
+  },
+  {
+    "id": "e2c7c79d-d851-49f7-9234-309a1699d82f",
+    "title": "Jornalismo",
+    "subtitle": "",
+    "image": "/uploads/a34a57918b5461a943cc553f.webp",
+    "link": "",
+    "active": true
+  },
+  {
+    "id": "f0ab3067-062a-4300-bd2b-24bddad84a80",
+    "title": "Entretenimento",
+    "subtitle": "",
+    "image": "/uploads/85322c688441904af46e5247.webp",
+    "link": "",
+    "active": true
+  },
+  {
+    "id": "347e4771-7a0e-44eb-88bf-ce3775039d96",
+    "title": "Jogo do dia",
+    "subtitle": "",
+    "image": "/uploads/64097d9d4fb62bc6c5a2e7e1.webp",
+    "link": "",
+    "active": true
+  }
+]

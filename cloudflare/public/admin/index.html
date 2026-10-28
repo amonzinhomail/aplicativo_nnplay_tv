@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Admin</title>
+<link rel="stylesheet" href="/admin/admin.css">
+<script src="/admin/admin.js" defer></script>
+</head>
+<body>
+<section id="login" class="login" hidden>
+  <form id="loginForm">
+    <h1>Administração</h1>
+    <label>Senha<input type="password" id="pw" autocomplete="current-password" required autofocus></label>
+    <button class="primary">Entrar</button>
+    <p id="loginErr" class="err" role="alert"></p>
+  </form>
+</section>
+
+<main id="app" hidden>
+  <header>
+    <h1>Administração</h1>
+    <div>
+      <a href="/" target="_blank" class="btn">Ver site</a>
+      <button id="logout" class="btn">Sair</button>
+    </div>
+  </header>
+  <nav class="tabs">
+    <button data-tab="banners" class="tab on">Banners</button>
+    <button data-tab="settings" class="tab">Configurações</button>
+    <button data-tab="youtube" class="tab">YouTube</button>
+  </nav>
+  <p id="msg" class="msg" role="status"></p>
+
+  <section id="tab-banners">
+    <div class="bar"><button id="add" class="btn primary">+ Novo banner</button></div>
+    <div id="list"></div>
+  </section>
+
+  <section id="tab-settings" hidden>
+    <div class="card">
+      <h2>Marca</h2>
+      <label>Nome<input type="text" id="brandName" maxlength="60"></label>
+      <label>Fuso horário do relógio<input type="text" id="brandTz" placeholder="America/Sao_Paulo"></label>
+    </div>
+
+    <div class="card">
+      <h2>Transmissões ao vivo (HLS .m3u8)</h2>
+      <div id="liveList"></div>
+      <button id="addLive" class="btn">+ Adicionar transmissão</button>
+    </div>
+
+    <div class="card">
+      <h2>Canal do YouTube</h2>
+      <label>Canal (@usuario)<input type="text" id="channel" placeholder="@NNPlayOficial"></label>
+      <div class="grid3">
+        <label>Máx. de Shorts<input type="number" id="maxShorts" min="0" max="50"></label>
+        <label>Vídeos por playlist<input type="number" id="maxPer" min="1" max="50"></label>
+        <label>Atualizar ao entrar a cada (min)<input type="number" id="refreshMin" min="5" max="1440"></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Playlists (ordem na tela)</h2>
+      <p class="hint">O título deve ser igual ao da playlist no YouTube. "Capa" é a arte grande acima da playlist; marque "sem capa" para não mostrar.</p>
+      <div id="plList"></div>
+      <button id="addPl" class="btn">+ Adicionar playlist</button>
+    </div>
+    <div class="bar"><button id="saveCfg" class="btn primary">Salvar configurações</button></div>
+  </section>
+
+  <section id="tab-youtube" hidden>
+    <div class="card">
+      <h2>Atualização do YouTube</h2>
+      <p id="ytInfo" class="hint">Carregando...</p>
+      <button id="refreshNow" class="btn primary">Atualizar agora</button>
+    </div>
+  </section>
+</main>
+</body>
+</html>

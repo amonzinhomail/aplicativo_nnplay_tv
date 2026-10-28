@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Minha TV</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preload" as="image" href="loading-logo.webp">
+<!-- defer: a página (e a tela de carregamento) aparece na hora, sem esperar os scripts; a ordem é mantida -->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js" integrity="sha384-9v3HcdYrO3D+OPDTjZ40RXocgE4GtXVCd3/mCS62JsM93JXgI1afJVuwjFvsu6ni" crossorigin="anonymous" defer></script>
+<script src="data.php" defer></script>
+<script src="app.js" defer></script>
+<noscript><style>#splash{display:none}</style></noscript>
+</head>
+<body>
+<div id="splash" class="splash" role="status" aria-live="polite" aria-label="Carregando">
+  <img class="splash-logo" src="loading-logo.webp" width="512" height="472" alt="">
+</div>
+
+<div class="topbar">
+  <div class="search" id="search">
+    <svg class="search-ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+    <button class="search-field" id="searchBtn" data-focus tabindex="0" aria-label="Buscar"><span id="searchLabel">Buscar...</span></button>
+  </div>
+  <time id="clock"></time>
+</div>
+
+<section id="searchPanel" class="search-panel" hidden>
+  <div class="kb" id="kb"></div>
+  <div class="results" id="results"></div>
+</section>
+
+<main id="home" class="main">
+  <section id="banners" class="hero" hidden></section>
+  <section id="live" class="block live"></section>
+  <section id="upcoming" class="block" hidden></section>
+  <section id="shorts" class="block" hidden></section>
+  <section id="playlists"></section>
+</main>
+
+<div id="player" class="player" hidden>
+  <div id="ytHost"></div>
+  <div id="pLoad" class="p-load">Carregando player...</div>
+  <div id="pIcon" class="p-icon" aria-hidden="true"></div>
+  <div class="p-hud"><div class="p-bar"><i id="pFill"></i></div><span id="pTime"></span></div>
+  <button id="closePlayer" class="close" data-focus tabindex="0" aria-label="Voltar para a página principal"><span aria-hidden="true">&larr;</span> Página principal</button>
+</div>
+</body>
+</html>

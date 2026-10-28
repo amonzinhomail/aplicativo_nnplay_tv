@@ -1,0 +1,27 @@
+name = "nn-play-tv"
+main = "src/worker.js"
+compatibility_date = "2025-10-01"
+
+# Site (index.html, style.css, app.js, /admin) como arquivos estáticos: não contam como requisição do Worker.
+# Só estas rotas passam pelo Worker:
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*", "/data.js", "/uploads/*"]
+
+# Banco de dados (banners, configurações, conteúdo do YouTube e imagens enviadas).
+# Crie com:  npx wrangler kv namespace create NN_KV   e cole o "id" abaixo.
+[[kv_namespaces]]
+binding = "NN_KV"
+id = "COLE_AQUI_O_ID_DO_KV"
+
+# Reforço: atualiza o conteúdo a cada 6 h mesmo sem visitas.
+[triggers]
+crons = ["0 */6 * * *"]
+
+[vars]
+YT_API_BASE = "https://www.googleapis.com/youtube/v3"
+
+# Segredos (NÃO coloque aqui; use "npx wrangler secret put NOME"):
+#   ADMIN_PASSWORD   senha do /admin (mín. 12 caracteres)
+#   YOUTUBE_API_KEY  chave da YouTube Data API v3

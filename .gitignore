@@ -1,0 +1,40 @@
+# ---- Segredos e dados locais (NUNCA publicar) ----
+.env
+.dev.vars
+config.php
+*.jks
+*.keystore
+keystore.properties
+signing/
+/data/
+php/data/*
+!php/data/.htaccess
+!php/data/index.html
+
+# ---- Gerado / pesado ----
+node_modules/
+.wrangler/
+.gradle/
+build/
+*.zip
+*.apk
+*.aab
+*.bak
+*.tmp
+local.properties
+/banners/
+/android/app/src/main/assets/
+/android/release/
+
+# Imagens enviadas pelo painel (só as sementes .webp do projeto ficam no repositório)
+/uploads/*
+!/uploads/*.webp
+php/uploads/*
+!php/uploads/.htaccess
+!php/uploads/index.html
+
+# ---- Sistema / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,14 @@
+local.properties
+keystore.properties
+*.jks
+*.keystore
+.gradle/
+build/
+app/build/
+.idea/
+*.apk
+*.aab
+# o site do app é gerado por build-web.js
+
+release/
+signing/

@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Descrição do banner (acessibilidade)",
+    "image": "https://seu-site.com.br/banners/banner-1.webp",
+    "link": "",
+    "active": true
+  },
+  {
+    "title": "Outro banner",
+    "image": "https://seu-site.com.br/banners/banner-2.webp",
+    "link": "https://exemplo.com/pagina",
+    "active": false
+  }
+]

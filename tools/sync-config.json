@@ -1,0 +1,17 @@
+{
+  "channel": "@NNPlayOficial",
+  "maxShorts": 30,
+  "maxPerPlaylist": 24,
+  "playlists": [
+    "Últimas Notícias",
+    "Comando 91",
+    "Futebol Show",
+    "Cortes do Futebol Show",
+    "Jornada Esportiva",
+    "Campeonato Alagoano 2026",
+    "Copa Alagoas 2026",
+    "Melhores Momentos",
+    "Lances, gols e informações",
+    "O que rolou na NN"
+  ]
+}

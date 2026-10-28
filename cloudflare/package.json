@@ -1,0 +1,14 @@
+{
+  "name": "nn-play-tv-cloudflare",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && wrangler dev",
+    "deploy": "node build.js && wrangler deploy",
+    "test": "node test/real-yt.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

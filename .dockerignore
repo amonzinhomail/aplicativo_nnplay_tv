@@ -1,0 +1,13 @@
+data/
+backups/
+banners/
+node_modules/
+*.bak
+*.tmp
+.env
+.git
+*.md
+Dockerfile
+docker-compose.yml
+Caddyfile
+backup.sh

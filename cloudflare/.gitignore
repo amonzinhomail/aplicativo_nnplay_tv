@@ -1,0 +1,8 @@
+node_modules/
+.wrangler/
+.dev.vars
+public/index.html
+public/style.css
+public/app.js
+
+public/loading-logo.webp
